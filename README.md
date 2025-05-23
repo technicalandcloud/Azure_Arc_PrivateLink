@@ -68,7 +68,7 @@ Once the deployment and configuration are complete:
 ![Arc Resource Screenshot](./assets/azure_arc_finally.png)
 
 - ✅ The **Azure Arc PrivateLink** is in place 
-![image](https://github.com/user-attachments/assets/518a7ae5-cb37-40e8-8c27-b3d83c20a60d)
+![Arc Resource Screenshot](./assets/PrivateLink.png)
 
 🧹 Cleanup / Destruction
 
