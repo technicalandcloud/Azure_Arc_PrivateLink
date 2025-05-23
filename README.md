@@ -16,6 +16,8 @@ This Terraform configuration deploys a full Azure Arc-enabled infrastructure sce
 - Private DNS zone configuration
 - Network security rules
 
+![Arc Resource Screenshot](./assets/Architecture.png)
+
 ---
 
 
