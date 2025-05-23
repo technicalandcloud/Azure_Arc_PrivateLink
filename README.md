@@ -63,10 +63,8 @@ These identifiers are linked to the Main Service created earlier.
 Once the deployment and configuration are complete:
 
 - ✅ The **Azure Arc** resource is successfully onboarded  
-- 📦 The `Azure Monitor Agent (AMA)` extension is installed  
-- 🔍 You can view logs **privately** through **AMPLS**  
-- 🧠 Data collection and monitoring work securely via **Private Link**
 
-![image](https://github.com/user-attachments/assets/934640df-03ad-411c-9d78-744e924b6ebd)
+![image](https://github.com/user-attachments/assets/d5f16085-e324-4ea0-830a-a31219754d01)
+
 
 
