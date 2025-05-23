@@ -66,5 +66,7 @@ Once the deployment and configuration are complete:
 
 ![image](https://github.com/user-attachments/assets/d5f16085-e324-4ea0-830a-a31219754d01)
 
+- ✅ The **Azure Arc PrivateLink** is in place 
+![image](https://github.com/user-attachments/assets/518a7ae5-cb37-40e8-8c27-b3d83c20a60d)
 
 
