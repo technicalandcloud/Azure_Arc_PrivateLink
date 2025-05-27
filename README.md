@@ -3,7 +3,6 @@
 This Terraform configuration deploys a full Azure Arc-enabled infrastructure scenario using **Azure Virtual Network Gateway connections** between simulated **on-premises** and **Azure** environments. It includes support for **Azure Arc Private Link**, **Windows VM onboarding**, and **secure remote access via Azure Bastion**.
 
 > ℹ️ This project is based on the community work from [Azure Arc Jumpstart](https://github.com/microsoft/azure_arc).  
----
 
 ## 📌 Features
 
@@ -17,9 +16,6 @@ This Terraform configuration deploys a full Azure Arc-enabled infrastructure sce
 - Network security rules
 
 ![Arc Resource Screenshot](./assets/Architecture.png)
-
----
-
 
 
 ## ✅ Prerequisites
@@ -38,8 +34,6 @@ This Terraform configuration deploys a full Azure Arc-enabled infrastructure sce
   - `admin_username`
   - `admin_password`
 
-
----
 ### Quick SPN creation:
 
 ```
@@ -47,7 +41,6 @@ az login
 subscriptionId=$(az account show --query id --output tsv)
 az ad sp create-for-rbac -n "JumpstartArc" --role "Contributor" --scopes /subscriptions/$subscriptionId
 ```
----
 ## 🚀 Deployment with Terraform
 
 Run the Terraform script by providing the following input variables:
@@ -60,7 +53,6 @@ Run the Terraform script by providing the following input variables:
 - `admin_password`
 These identifiers are linked to the Main Service created earlier.
 
----
 ## 🧪 Test Result
 
 Once the deployment and configuration are complete:
