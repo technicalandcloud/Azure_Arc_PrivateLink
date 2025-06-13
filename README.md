@@ -34,24 +34,38 @@ This Terraform configuration deploys a full Azure Arc-enabled infrastructure sce
   - `admin_username`
   - `admin_password`
 
-### Quick SPN creation:
-
+# ✔ Service Principal Setup
 ```
 az login
-subscriptionId=$(az account show --query id --output tsv)
-az ad sp create-for-rbac -n "JumpstartArc" --role "Contributor" --scopes /subscriptions/$subscriptionId
+$subId = az account show --query id -o tsv
+
+az ad sp create-for-rbac `
+  --name "JumpstartArc" `
+  --role "Contributor" `
+  --scopes "/subscriptions/$subId" `
+  --sdk-auth > spn.json
 ```
-## 🚀 Deployment with Terraform
+Then load the credentials:
+```
+$spn = Get-Content ./spn.json | ConvertFrom-Json
 
-Run the Terraform script by providing the following input variables:
+# ARM_* = used by Terraform provider
+$env:ARM_CLIENT_ID       = $spn.clientId
+$env:ARM_CLIENT_SECRET   = $spn.clientSecret
+$env:ARM_SUBSCRIPTION_ID = $spn.subscriptionId
+$env:ARM_TENANT_ID       = $spn.tenantId
 
-- `client_id`
-- `client_secret`
-- `tenant_id`
-- `subscription_id`
-- `admin_username`
-- `admin_password`
-These identifiers are linked to the Main Service created earlier.
+# TF_VAR_* = used by Terraform variable injection
+$env:TF_VAR_client_id       = $env:ARM_CLIENT_ID
+$env:TF_VAR_client_secret   = $env:ARM_CLIENT_SECRET
+$env:TF_VAR_subscription_id = $env:ARM_SUBSCRIPTION_ID
+$env:TF_VAR_tenant_id       = $env:ARM_TENANT_ID
+```
+# Deploy the infrastructure using Terraform
+```
+terraform init
+terraform apply -auto-approve
+```
 
 ## 🧪 Test Result
 
