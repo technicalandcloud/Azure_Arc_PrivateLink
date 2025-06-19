@@ -24,7 +24,7 @@ This Terraform configuration deploys a full Azure Arc-enabled infrastructure sce
 - Terraform installed locally
 - A **Service Principal** with `Contributor` role on a **subscription**
 - Azure Subscription
-- An Azure AD App registration with:
+- An App registration with:
   - `Client ID`
   - `Client Secret`
   - `Tenant ID`
