@@ -23,7 +23,6 @@ This Terraform configuration deploys a full Azure Arc-enabled infrastructure sce
 - Azure CLI
 - Terraform installed locally
 - A **Service Principal** with `Contributor` role on a **subscription**
-- [Terraform CLI](https://developer.hashicorp.com/terraform/downloads)
 - Azure Subscription
 - [Azure CLI](https://learn.microsoft.com/en-us/cli/azure/install-azure-cli)
 - An Azure AD App registration with:
