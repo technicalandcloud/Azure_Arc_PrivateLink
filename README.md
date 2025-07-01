@@ -56,7 +56,6 @@ $spn = [PSCustomObject]@{
 
 # Save as a JSON file
 $spn | ConvertTo-Json -Depth 10 | Out-File -FilePath "spn.json" -Encoding utf8
-
 ```
 Then load the credentials:
 ```
