@@ -46,9 +46,8 @@ $sp = az ad sp create-for-rbac `
     --role "Contributor" `
     --scopes "/subscriptions/$subId" `
     --output json | ConvertFrom-Json
-
 # Manually construct the spn.json file
-$spn = @{
+$spn = [PSCustomObject]@{
     clientId       = $sp.appId
     clientSecret   = $sp.password
     subscriptionId = $subId
@@ -56,7 +55,7 @@ $spn = @{
 }
 
 # Save as a JSON file
-$spn | ConvertTo-Json -Depth 10 | Out-File -Encoding utf8 spn.json
+$spn | ConvertTo-Json -Depth 10 | Out-File -FilePath "spn.json" -Encoding utf8
 
 ```
 Then load the credentials:
