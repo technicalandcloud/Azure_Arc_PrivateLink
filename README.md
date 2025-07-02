@@ -36,7 +36,8 @@ This Terraform configuration deploys a full Azure Arc-enabled infrastructure sce
 ```
 # Sign in to Azure
 az login
-
+```
+```
 # Retrieve the subscription ID
 $subId = az account show --query id -o tsv
 
